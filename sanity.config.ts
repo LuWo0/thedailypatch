@@ -9,9 +9,13 @@ import {deskTool} from 'sanity/desk'
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
 import {apiVersion, dataset, projectId} from './sanity/env'
 import {schema} from './sanity/schema'
+import { myTheme } from './sanity/theme'
+import StudioNav from './components/StudioNav'
 
 export default defineConfig({
   basePath: '/studio',
+  name: "The_Daily_Patch_Studio",
+  title: "The Daily Patch Studio",
   projectId,
   dataset,
   // Add and edit the content schema in the './sanity/schema' folder
@@ -22,4 +26,10 @@ export default defineConfig({
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({defaultApiVersion: apiVersion}),
   ],
+  theme: myTheme,
+  studio: {
+    components: {
+      navbar: StudioNav,
+    }
+  },
 })
