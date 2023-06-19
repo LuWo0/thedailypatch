@@ -1,10 +1,6 @@
 import moment from "moment";
-
-
-
-// TODO: FIGURE OUT HOW TO ADD BODY TO PAGE.
-
-
+import { RichTextComponents } from "./RichTextComponents";
+import PortableText from "react-portable-text";
 
 type Props = {
   posts: Post[];
@@ -16,21 +12,27 @@ export default function TodaysPatch({ posts }: Props) {
     return <p>Today&apos;s Patch Notes Not Out Yet :3 </p>;
   }
   const time = new Date(todaysPatch._createdAt);
-  
+
   return (
-    <section className="block w-full h-full font-mono -skew-x-12">
-      <h1 className="font-mono text-7xl text-center">
+    <section className="font-mono">
+      <h1 className="text-4xl text-center">
         {todaysPatch?.title.toUpperCase()} NOTES
       </h1>
-      <div className=" flex gap-8 justify-around text-sm py-4 ">
+      <div className=" flex justify-center gap-8 text-sm py-4 ">
         <p className="opacity-30">{moment(time).fromNow().toUpperCase()}</p>
-        <div className="flex gap-2" >
+        <div className="flex gap-2">
           <p className="opacity-30">AUTHOR: </p>
-          <p className="opacity-80 text-[#b9971f]">{todaysPatch.author.name.toUpperCase()}</p>
+          <p className="opacity-80 text-[#b9971f]">
+            {todaysPatch.author.name.toUpperCase()}
+          </p>
         </div>
-        <article>
-            {todaysPatch.description}
-        </article>
+        <article>{todaysPatch.description}</article>
+      </div>
+      <div className="">
+        <PortableText
+          serializers={RichTextComponents}
+          content={todaysPatch.body}
+        />
       </div>
     </section>
   );
