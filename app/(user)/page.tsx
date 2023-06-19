@@ -18,7 +18,7 @@ export default async function Home() {
   const posts = await client.fetch(query);
   
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex flex-col items-center justify-between p-24">
       <PatchList posts={posts} />
     </main>
   );

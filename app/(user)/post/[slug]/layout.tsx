@@ -6,7 +6,7 @@ export const metadata = {
   description: "Daily patch notes",
 };
 
-export default function UserLayout({
+export default function PostLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -14,7 +14,6 @@ export default function UserLayout({
   return (
     <html lang="en">
       <body className=" max-w-5xl mx-auto">
-        <Header />
         {children}
       </body>
     </html>
