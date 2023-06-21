@@ -14,7 +14,7 @@ export default function TodaysPatch({ posts }: Props) {
   const time = new Date(todaysPatch._createdAt);
 
   return (
-    <section className="font-mono">
+    <section className="font-mono max-w-full ">
       <h1 className="text-4xl text-center">
         {todaysPatch?.title.toUpperCase()} NOTES
       </h1>

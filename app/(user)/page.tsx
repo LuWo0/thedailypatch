@@ -12,13 +12,12 @@ const query = groq`
   } | order(_createdAt desc)
 `;
 
-export const revalidate = REVALIDATION_TIME;
 
 export default async function Home() {
   const posts = await client.fetch(query);
   
   return (
-    <main className="flex flex-col items-center justify-between p-24">
+    <main className="p-24 text-xs md:text-xl">
       <PatchList posts={posts} />
     </main>
   );

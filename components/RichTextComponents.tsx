@@ -23,7 +23,7 @@ export const RichTextComponents = {
   li: ({ children }: any) => <li className="font-mono">{children}</li>,
   ol: ({ children }: any) => <ol className="mt-lg list-decimal">{children}</ol>,
   h1: ({ children }: any) => (
-    <h1 className="text-5xl py-10 font-mono">{children}</h1>
+    <h1 className="text-5xl py-10 font-mono border">{children}</h1>
   ),
   h2: ({ children }: any) => (
     <h1 className="text-4xl py-10 font-mono">{children}</h1>
@@ -35,7 +35,7 @@ export const RichTextComponents = {
     <h1 className="text-2xl py-10 font-mono">{children}</h1>
   ),
   blockquote: ({ children }: any) => (
-    <blockquote className="border-l-[#b9971f] border-l-4 pl-5 py-5 my-5 font-mono">
+    <blockquote className="border-l-[#b9971f] border-l-4 pl-5 py-5 my-5 font-mono w-auto">
       {children}
     </blockquote>
   ),
@@ -45,7 +45,7 @@ export const RichTextComponents = {
         href={value?.href}
         className="underline decoration-[#b9971f] hover:decoration-[#b9971f]"
       >
-        {/* {children} */}
+        {children}
       </Link>;
     },
   },

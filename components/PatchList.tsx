@@ -1,14 +1,9 @@
-import { client } from "@/sanity/lib/client";
-
-import Image from "next/image";
 import TodaysPatch from "./TodaysPatch";
 import ClientSideRoute from "./ClientSideRoute";
 
 type Props = {
   posts: Post[];
 };
-
-
 
 export default function PatchList({ posts }: Props) {
   return (
@@ -21,7 +16,7 @@ export default function PatchList({ posts }: Props) {
         {posts.map((post) => (
           <ClientSideRoute key={post._id} route={`/post/${post.slug.current}`}>
             <div className="w-[400px] h-[300px] border-none  ">
-              <div className="group flex flex-col relative items-center justify-center w-full h-full bg-[#3D3D3D] hover:bg-[#b9971f] cursor-pointer transition-all hover:scale-105 duration-150">
+              <div className="group flex flex-col relative items-center justify-center md:w-full md:h-full w-[50%] h-[50%] bg-[#3D3D3D] hover:bg-[#b9971f] cursor-pointer transition-all hover:scale-105 duration-150">
                 <p className="font-bold font-mono">{post.title}</p>
                 <p className="opacity-30 text-sm absolute bottom-0 right-0 p-2 font-mono group-hover:opacity-0">
                   {new Date(post._createdAt)

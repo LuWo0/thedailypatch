@@ -1,5 +1,6 @@
-import Header from "../../components/Header";
+import Header from "@/components/Header";
 import "../globals.css";
+import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: "The Daily Patch - Home",
@@ -13,8 +14,9 @@ export default function UserLayout({
 }) {
   return (
     <html lang="en">
-      <body className=" max-w-5xl mx-auto">
+      <body className=" max-w-8xl">
         <Header />
+        <Navbar />
         {children}
       </body>
     </html>
