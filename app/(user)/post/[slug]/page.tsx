@@ -22,7 +22,7 @@ export async function generateStaticParams() {
 
   const slugRoutes = slugs.map((slug) => slug.slug.current);
 
-  return slugRoutes.map((slug) => ({ slug, }));
+  return slugRoutes.map((slug) => ({ slug }));
 }
 
 export default async function Post({ params: { slug } }: Props) {
@@ -58,7 +58,12 @@ export default async function Post({ params: { slug } }: Props) {
           </div>
         </div>
       </section>
-      <PortableText serializers={RichTextComponents} content={post.body} />
+      <PortableText
+        dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+        projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+        serializers={RichTextComponents}
+        content={post.body}
+      />
     </article>
   );
 }

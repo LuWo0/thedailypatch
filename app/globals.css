@@ -32,8 +32,7 @@ body {
 }
 
 a {
-  text-decoration-line: underline;
-  text-decoration-color: #b9971f;
+  text-decoration-line: none;
   color: #b9971f;
 }
 

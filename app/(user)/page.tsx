@@ -12,12 +12,11 @@ const query = groq`
   } | order(_createdAt desc)
 `;
 
-
 export default async function Home() {
   const posts = await client.fetch(query);
   
   return (
-    <main className="p-24 text-xs md:text-xl">
+    <main className="px-24 p-6 text-xs md:text-xl">
       <PatchList posts={posts} />
     </main>
   );

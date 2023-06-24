@@ -1,8 +1,8 @@
 export default function About() {
   return (
     <section className="font-mono py-8">
-      <header className="text-5xl">About</header>
-      <article className="py-8">
+      <header className="text-5xl text-center md:text-left">About</header>
+      <article className="py-8 text-center md:text-left">
         <p className="ml-4">
           This is a scuffed news site tailored for those of us who like to
           receive our news in the form of patch notes! This is a personal
@@ -13,7 +13,7 @@ export default function About() {
         </p>
         <h1 className="py-8">:3</h1>
       </article>
-      <aside>
+      <aside className="text-center md:text-left">
         <h1>Accolades:</h1>
         <p className="ml-4 py-8">Nothing to see here yet! Come back later!</p>
       </aside>

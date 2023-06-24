@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import "../../../globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "The Daily Patch - Patch",
@@ -13,12 +14,9 @@ export default function PostLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className=" max-w-5xl mx-auto">
-        <Header />
-        <Navbar />
-        {children}
-      </body>
-    </html>
+    <>
+      {children}
+      
+    </>
   );
 }

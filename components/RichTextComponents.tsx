@@ -1,16 +1,20 @@
 import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
+import { getImageDimensions } from "@sanity/asset-utils";
 
 export const RichTextComponents = {
   types: {
-    image: ({ value }: any) => {
+    image: ({ node }: any) => {
+      const { width, height } = getImageDimensions(node);
+      const imageUrl = urlForImage(node).width(width).height(height).url();
       return (
         <div className="relative max-w-xl5 h-96 m-10 mx-auto">
           <Image
-            className="object-contain"
-            src={urlForImage(value).url()}
-            alt="Patch Notes Image"
+            className=" aspect-w-2 aspect-h-1"
+            src={imageUrl}
+            alt={node.alt || " "}
+            loading="lazy"
             fill
           />
         </div>
@@ -41,12 +45,13 @@ export const RichTextComponents = {
   ),
   marks: {
     link: ({ children, value }: any) => {
+      return(
       <Link
         href={value?.href}
         className="underline decoration-[#b9971f] hover:decoration-[#b9971f]"
       >
         {children}
-      </Link>;
+      </Link>);
     },
   },
 };
