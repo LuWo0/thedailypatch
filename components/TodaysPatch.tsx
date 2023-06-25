@@ -14,11 +14,11 @@ export default function TodaysPatch({ posts }: Props) {
   const time = new Date(todaysPatch._createdAt);
 
   return (
-    <section className="font-mono max-w-full ">
+    <section className="font-mono max-w-prose">
       <h1 className="text-4xl text-center">
         {todaysPatch?.title.toUpperCase()} NOTES
       </h1>
-      <div className=" flex justify-center gap-8 text-sm py-4 ">
+      <div className=" flex justify-center gap-8 py-4 whitespace-nowrap">
         <p className="opacity-30">{moment(time).fromNow().toUpperCase()}</p>
         <div className="flex gap-2">
           <p className="opacity-30">AUTHOR: </p>

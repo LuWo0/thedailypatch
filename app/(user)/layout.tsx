@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import "../globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SearchInput from "@/components/SearchInput";
 
 export const metadata = {
   title: "The Daily Patch - Home",
@@ -16,8 +17,10 @@ export default function UserLayout({
   return (
     <div>
       <Header />
-      <Navbar />
-
+      <div className="flex py-4 justify-around">
+        <SearchInput />
+        <Navbar />
+      </div>
       {children}
       <Footer />
     </div>

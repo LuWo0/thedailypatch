@@ -1,5 +1,20 @@
 import Link from "next/link";
+import { Metadata, ResolvingMetadata } from "next";
 
+type Props = {
+    params: { id: string }
+    searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export async function generateMetadata(
+    { params }: Props,
+    parent?: ResolvingMetadata
+  ): Promise<Metadata> {
+    return {
+      title: "Contact | The Daily Patch",
+      description:"Contact Page"
+    }
+}
 export default function Contact() {
   return (
     <section className="font-mono py-8">

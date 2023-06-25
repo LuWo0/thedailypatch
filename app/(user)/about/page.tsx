@@ -1,3 +1,20 @@
+import { Metadata, ResolvingMetadata } from "next";
+
+type Props = {
+    params: { id: string }
+    searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export async function generateMetadata(
+    { params }: Props,
+    parent?: ResolvingMetadata
+  ): Promise<Metadata> {
+    return {
+      title: "About | The Daily Patch",
+      description:"About Page"
+    }
+}
+
 export default function About() {
   return (
     <section className="font-mono py-8">

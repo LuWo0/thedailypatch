@@ -3,6 +3,7 @@ import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
 import PatchList from "@/components/PatchList";
 import { REVALIDATION_TIME } from "@/util/Revalidate";
+import Search from "@/components/Search";
 
 const query = groq`
   *[_type=='post'] {

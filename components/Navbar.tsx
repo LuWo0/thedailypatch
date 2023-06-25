@@ -12,7 +12,7 @@ export default function Navbar() {
     setMenuOpen(!menuOpen);
   };
   return (
-    <nav className="h-24">
+    <nav className="">
       <div className="flex justify-end items-center h-full w-full px-4 2xl:px-16 ">
         <ul className="hidden sm:flex ">
           <Link href="/">

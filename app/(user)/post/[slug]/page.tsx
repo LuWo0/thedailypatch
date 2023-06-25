@@ -13,6 +13,22 @@ interface Props {
   };
 }
 
+export async function generateMetadata({ params: { slug } }: Props) {
+  const query = groq`
+        *[_type == "post" && slug.current == $slug][0]{
+            ...,
+            author->,
+            categories[]->
+        }
+    `;
+
+  const post = await client.fetch(query, { slug });
+
+  return {
+    title: `${post.title} | The Daily Patch`,
+  };
+}
+
 export async function generateStaticParams() {
   const query = groq`*[_type=="post"]{
         slug
@@ -37,7 +53,7 @@ export default async function Post({ params: { slug } }: Props) {
   const post = await client.fetch(query, { slug });
 
   return (
-    <article className=" mx-12 pl-5 py-5 my-5">
+    <article className=" mx-12 pl-5 py-5 my-5 text-sm md:text-md ">
       <ClientSideRoute route="/">
         <ArrowUturnLeftIcon className="h-5 w-5 mr-2" />
       </ClientSideRoute>
@@ -59,6 +75,7 @@ export default async function Post({ params: { slug } }: Props) {
         </div>
       </section>
       <PortableText
+        className="max-w-prose"
         dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
         projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
         serializers={RichTextComponents}
