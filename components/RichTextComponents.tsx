@@ -26,17 +26,17 @@ export const RichTextComponents = {
   ),
   li: ({ children }: any) => <li className="font-mono">{children}</li>,
   ol: ({ children }: any) => <ol className="mt-lg list-decimal">{children}</ol>,
-  h1: ({ children }: any) => (
-    <h1 className="text-5xl py-10 font-mono border">{children}</h1>
+  h1: ({ children}: any) => (
+    <h1 className="header1 text-5xl py-10 font-mono border">{children}</h1>
   ),
-  h2: ({ children }: any) => (
-    <h1 className="text-4xl py-10 font-mono">{children}</h1>
+  h2: ({ children, idx:number }: any) => (
+    <h2 id={`${number}`} className="header2 text-4xl py-10 font-mono">{children}</h2>
   ),
   h3: ({ children }: any) => (
-    <h1 className="text-3xl py-10 font-mono">{children}</h1>
+    <h3 className="header3 text-3xl py-10 font-mono">{children}</h3>
   ),
   h4: ({ children }: any) => (
-    <h1 className="text-2xl py-10 font-mono">{children}</h1>
+    <h4 className="header4 text-2xl py-10 font-mono">{children}</h4>
   ),
   blockquote: ({ children }: any) => (
     <blockquote className="border-l-[#b9971f] border-l-4 pl-5 py-5 my-5 font-mono w-auto">

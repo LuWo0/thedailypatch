@@ -1,6 +1,7 @@
 import moment from "moment";
 import { RichTextComponents } from "./RichTextComponents";
 import PortableText from "react-portable-text";
+import TableOfContents from "./TableOfContents";
 
 type Props = {
   posts: Post[];
@@ -35,6 +36,7 @@ export default function TodaysPatch({ posts }: Props) {
           serializers={RichTextComponents}
           content={todaysPatch.body}
         />
+        <TableOfContents />
       </div>
     </section>
   );

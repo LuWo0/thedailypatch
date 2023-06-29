@@ -1,5 +1,6 @@
 import ClientSideRoute from "@/components/ClientSideRoute";
 import { RichTextComponents } from "@/components/RichTextComponents";
+import TableOfContents from "@/components/TableOfContents";
 import { client } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
 import ArrowUturnLeftIcon from "@heroicons/react/24/solid/ArrowUturnLeftIcon";
@@ -74,13 +75,16 @@ export default async function Post({ params: { slug } }: Props) {
           </div>
         </div>
       </section>
-      <PortableText
-        className="max-w-prose"
-        dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
-        projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
-        serializers={RichTextComponents}
-        content={post.body}
-      />
+      <div className="relative flex font-mono">
+        <PortableText
+          className="max-w-prose"
+          dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+          projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+          serializers={RichTextComponents}
+          content={post.body}
+        />
+        <TableOfContents />
+      </div>
     </article>
   );
 }
