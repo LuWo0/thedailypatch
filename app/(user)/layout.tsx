@@ -16,8 +16,8 @@ export default function UserLayout({
 }) {
   return (
     <div>
-      <Header />
-      <div className="flex py-4 justify-around">
+      <div className="flex py-4 mb-10 justify-around sticky top-0 bg-[#121212] w-full z-20 rounded-md">
+        <Header />
         <SearchInput />
         <Navbar />
       </div>

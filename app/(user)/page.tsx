@@ -16,7 +16,7 @@ export default async function Home() {
   const posts = await client.fetch(query);
   
   return (
-    <main className="px-24 p-6 text-xl ">
+    <main className="px-24 p-6 text-sm md:text-md">
       <PatchList posts={posts} />
     </main>
   );
