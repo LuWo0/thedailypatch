@@ -29,7 +29,7 @@ export default function Navbar() {
           onClick={handleNavClick}
           className="sm:hidden cursor-pointer pl-24"
         >
-          <Bars4Icon className="fixed top-3 right-5 h-8 w-8 text-[#b9971f] " />
+          <Bars4Icon className="fixed top-6 right-12 h-8 w-8 text-[#b9971f] " />
         </div>
       </div>
       <div

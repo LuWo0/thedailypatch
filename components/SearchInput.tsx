@@ -23,7 +23,7 @@ const SearchInput = () => {
   };
 
   return (
-    <form onSubmit={onSearch} className="flex justify-center w-1/3 h-1/3">
+    <form onSubmit={onSearch} className="flex justify-center items-center sm:w-1/3">
       <input
         value={searchQuery || ""}
         onChange={(event) => setSearchQuery(event.target.value)}

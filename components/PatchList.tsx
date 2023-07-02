@@ -1,6 +1,6 @@
 import TodaysPatch from "./TodaysPatch";
 import ClientSideRoute from "./ClientSideRoute";
-import SearchInput from "./SearchInput";
+import MobileScrollTop from "./MobileScrollTop";
 
 type Props = {
   posts: Post[];
@@ -10,10 +10,10 @@ export default function PatchList({ posts }: Props) {
   return (
     <div>
       <TodaysPatch posts={posts} />
-
       <hr className="border-[#3d3d3d] mb-10" />
       <div className="">
         <h1 className="font-mono text-4xl">Archive</h1>
+        <MobileScrollTop />
         {posts.map((post) => (
           <ClientSideRoute key={post._id} route={`/post/${post.slug.current}`}>
             <div className="">
