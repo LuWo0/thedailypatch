@@ -8,7 +8,6 @@ type Props = {
 
 export async function generateMetadata(
     { params }: Props,
-    parent?: ResolvingMetadata
   ): Promise<Metadata> {
     return {
       title: "Contact | The Daily Patch",
