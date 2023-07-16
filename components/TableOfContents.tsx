@@ -42,7 +42,7 @@ export default function TableOfContents() {
       <h3>Table of Contents</h3>
       {headings?.map(({ title, idx }) => (
         <Link href={`#${idx}`} key={title.id} onClick={handleScroll}>
-          {title.textContent}
+          {title.textContent?.substring(0, 50) + "\u2026"}
         </Link>
       ))}
     </div>
